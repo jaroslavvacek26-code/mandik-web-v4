@@ -1,7 +1,10 @@
 import createMiddleware from "next-intl/middleware";
-import { routing } from "./routing";
 
-export default createMiddleware(routing);
+export default createMiddleware({
+  locales: ["cs", "en", "de", "uk"],
+  defaultLocale: "cs",
+  localePrefix: "always",
+});
 
 export const config = {
   matcher: [
