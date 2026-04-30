@@ -31,17 +31,17 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
                 className="h-20 w-auto sm:h-24 -translate-y-5"
               />
             </Link>
-            <p className="-mt-9 text-lg text-white/80 leading-relaxed max-w-sm">
+            <p className="-mt-9 text-base text-white/80 leading-relaxed max-w-sm">
               {t("description")}
             </p>
           </div>
 
           {/* Výrobky */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-base uppercase tracking-wider">
               {tNav("products")}
             </h3>
-            <ul className="space-y-2.5 text-lg text-white/80">
+            <ul className="space-y-2.5 text-base text-white/80">
               {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
@@ -57,10 +57,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Podpora */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-base uppercase tracking-wider">
               {t("support")}
             </h3>
-            <ul className="space-y-2.5 text-lg text-white/80">
+            <ul className="space-y-2.5 text-base text-white/80">
               <li>
                 <Link href={`/${locale}/kontakt`} className="hover:text-brand-green transition-colors">
                   {t("contactSupport")}
@@ -81,10 +81,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Společnost */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-base uppercase tracking-wider">
               {tNav("company")}
             </h3>
-            <ul className="space-y-2.5 text-lg text-white/80">
+            <ul className="space-y-2.5 text-base text-white/80">
               <li>
                 <Link href={`/${locale}/spolecnost/o-nas`} className="hover:text-brand-green transition-colors">
                   {tNav("about")}
@@ -115,10 +115,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Právní */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-base uppercase tracking-wider">
               {t("legal")}
             </h3>
-            <ul className="space-y-2.5 text-lg text-white/80">
+            <ul className="space-y-2.5 text-base text-white/80">
               <li>
                 <Link href={`/${locale}/ochrana-osobnich-udaju`} className="hover:text-brand-green transition-colors">
                   {t("privacy")}
