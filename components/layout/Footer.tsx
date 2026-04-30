@@ -17,31 +17,31 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
   return (
     <footer className="bg-brand-blue text-white mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-8 lg:gap-6">
 
           {/* Logo + popis firmy */}
           <div className="lg:pt-1">
-            <Link href={`/${locale}`} className="inline-flex">
+            <Link href={`/${locale}`} className="inline-block -translate-x-7 -translate-y-2">
               <Image
                 src="/logos/mandik-logo-white.webp"
                 alt="MANDÍK"
                 width={220}
                 height={65}
-                className="h-20 w-auto sm:h-24"
+                className="h-20 w-auto sm:h-24 -translate-y-5"
               />
             </Link>
-            <p className="mt-5 text-sm text-white/80 leading-relaxed max-w-sm">
+            <p className="-mt-9 text-lg text-white/80 leading-relaxed max-w-sm">
               {t("description")}
             </p>
           </div>
 
           {/* Výrobky */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
               {tNav("products")}
             </h3>
-            <ul className="space-y-2.5 text-sm text-white/80">
+            <ul className="space-y-2.5 text-lg text-white/80">
               {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
@@ -57,10 +57,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Podpora */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
               {t("support")}
             </h3>
-            <ul className="space-y-2.5 text-sm text-white/80">
+            <ul className="space-y-2.5 text-lg text-white/80">
               <li>
                 <Link href={`/${locale}/kontakt`} className="hover:text-brand-green transition-colors">
                   {t("contactSupport")}
@@ -81,10 +81,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Společnost */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
               {tNav("company")}
             </h3>
-            <ul className="space-y-2.5 text-sm text-white/80">
+            <ul className="space-y-2.5 text-lg text-white/80">
               <li>
                 <Link href={`/${locale}/spolecnost/o-nas`} className="hover:text-brand-green transition-colors">
                   {tNav("about")}
@@ -115,10 +115,10 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
 
           {/* Právní */}
           <div>
-            <h3 className="font-eurostile font-bold text-white mb-4 text-sm uppercase tracking-wider">
+            <h3 className="font-eurostile font-bold text-white mb-4 text-lg uppercase tracking-wider">
               {t("legal")}
             </h3>
-            <ul className="space-y-2.5 text-sm text-white/80">
+            <ul className="space-y-2.5 text-lg text-white/80">
               <li>
                 <Link href={`/${locale}/ochrana-osobnich-udaju`} className="hover:text-brand-green transition-colors">
                   {t("privacy")}

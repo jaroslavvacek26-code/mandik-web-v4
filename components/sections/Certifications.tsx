@@ -35,7 +35,7 @@ export default async function Certifications({ locale }: { locale: string }) {
           <div className="mt-2 w-16 h-1 bg-brand-green" />
         </div>
 
-        <div className="flex flex-wrap gap-6 items-center">
+        <div className="flex flex-wrap gap-5 items-center">
           {certs.map((cert) => (
             <a
               key={cert.id}
