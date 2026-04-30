@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
@@ -28,7 +28,10 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  // Nastav locale pro všechny server komponenty bez next-intl middleware
+  setRequestLocale(locale);
+
+  const messages = await getMessages({ locale });
 
   // Kategorie pro dropdown "Výrobky" v headeru
   const categories = await fetchPortfolio(locale).catch(() => []);
