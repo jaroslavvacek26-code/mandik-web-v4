@@ -11,6 +11,16 @@ const nextConfig = {
       { protocol: "https", hostname: "wi1rvkmguv1ndwwa.public.blob.vercel-storage.com" },
     ],
   },
+  async redirects() {
+    return [
+      // Přesměrování z kořene na českou verzi
+      {
+        source: "/",
+        destination: "/cs",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
