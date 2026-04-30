@@ -21,8 +21,8 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr] gap-10 lg:gap-8">
 
           {/* Logo + popis firmy */}
-          <div>
-            <Link href={`/${locale}`} className="inline-block">
+          <div className="lg:pt-1">
+            <Link href={`/${locale}`} className="inline-flex">
               <Image
                 src="/logos/mandik-logo-white.webp"
                 alt="MANDÍK"
@@ -31,7 +31,7 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
                 className="h-20 w-auto sm:h-24"
               />
             </Link>
-            <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
+            <p className="mt-5 text-sm text-white/80 leading-relaxed max-w-sm">
               {t("description")}
             </p>
           </div>

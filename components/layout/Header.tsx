@@ -144,7 +144,7 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
         </Link>
 
         {/* Desktop navigace */}
-        <ul className="hidden md:flex items-center gap-6 text-sm font-medium text-brand-blue">
+        <ul className="hidden md:flex items-center gap-5 lg:gap-6 text-lg xl:text-xl font-medium text-brand-blue">
           {/* Naše společnost */}
           <li className="relative" onMouseEnter={companyEnter} onMouseLeave={companyLeave}>
             <span className="flex items-center gap-1 hover:text-brand-green transition-colors py-5 cursor-default">
@@ -155,14 +155,14 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
             </span>
             {companyOpen && (
               <ul className="absolute top-full left-0 bg-white shadow-lg rounded min-w-64 py-1 border border-gray-100">
-                <li><Link href={`/${locale}/spolecnost/o-nas`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>{t("about")}</Link></li>
-                <li><Link href={`/${locale}/spolecnost/reference`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>{t("references")}</Link></li>
-                <li><Link href={`/${locale}/spolecnost/novinky`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>{t("news")}</Link></li>
-                <li><Link href={`/${locale}/spolecnost/kariera`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>{t("careers")}</Link></li>
-                <li><Link href={`/${locale}/spolecnost/certifikaty`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>{t("certificates")}</Link></li>
+                <li><Link href={`/${locale}/spolecnost/o-nas`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>{t("about")}</Link></li>
+                <li><Link href={`/${locale}/spolecnost/reference`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>{t("references")}</Link></li>
+                <li><Link href={`/${locale}/spolecnost/novinky`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>{t("news")}</Link></li>
+                <li><Link href={`/${locale}/spolecnost/kariera`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>{t("careers")}</Link></li>
+                <li><Link href={`/${locale}/spolecnost/certifikaty`} className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>{t("certificates")}</Link></li>
                 <li>
                   <a href="https://my.matterport.com/show/?m=MW8NFZmbZoo" target="_blank" rel="noopener noreferrer"
-                    className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm" onClick={closeAll}>
+                    className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base" onClick={closeAll}>
                     {t("virtualShowroom")}
                   </a>
                 </li>
@@ -184,7 +184,7 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
                   <li key={cat.slug}>
                     <Link
                       href={`/${locale}/vyroba/${cat.slug}`}
-                      className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-sm"
+                      className="block px-4 py-2.5 hover:bg-gray-50 hover:text-brand-green text-base"
                       onClick={closeAll}
                     >
                       {cat.name}

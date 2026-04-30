@@ -15,7 +15,7 @@ function ShowroomCard({ label }: { label: string }) {
       <svg className="w-12 h-12 mb-3 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a1 1 0 011-1h8a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" />
       </svg>
-      <span className="font-eurostile font-semibold text-sm text-center px-3">{label}</span>
+      <span className="font-eurostile font-semibold text-xl text-center px-4 leading-tight">{label}</span>
     </a>
   );
 }
@@ -45,7 +45,7 @@ function ProductCard({ category, locale }: { category: Category; locale: string 
           <span className="text-brand-blue/30 text-5xl font-eurostile font-bold">M</span>
         </div>
       )}
-      <span className="absolute bottom-0 left-0 right-0 p-3 text-white text-sm font-semibold font-eurostile leading-tight">
+      <span className="absolute bottom-0 left-0 right-0 p-4 text-white text-xl font-semibold font-eurostile leading-tight sm:text-2xl">
         {category.name}
       </span>
     </Link>
