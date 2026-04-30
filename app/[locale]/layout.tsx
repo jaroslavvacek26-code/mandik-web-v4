@@ -45,7 +45,7 @@ export default async function LocaleLayout({
   return (
     <I18nProvider locale={locale} messages={messages}>
       <Header categories={navCategories} />
-      <div className="pt-16 flex-1 flex flex-col">
+      <div className="pt-20 sm:pt-24 flex-1 flex flex-col">
         {children}
       </div>
       <Footer categories={navCategories} />

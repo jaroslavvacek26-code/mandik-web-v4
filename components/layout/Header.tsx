@@ -130,7 +130,7 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 sm:h-24">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center shrink-0" onClick={closeAll}>
           <Image
@@ -138,7 +138,7 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
             alt="MANDÍK"
             width={180}
             height={54}
-            className="h-8 w-auto sm:h-9"
+            className="h-16 w-auto sm:h-[72px]"
             priority
           />
         </Link>

@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Video na pozadí */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://wi1rvkmguv1ndwwa.public.blob.vercel-storage.com/homepage-video-YI4aAQqFws1Ehk0wH1mSUkGcwAaCDC.webm"
+        src="/videos/hero.webm"
         autoPlay
         muted
         loop

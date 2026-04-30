@@ -28,7 +28,7 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
                 alt="MANDÍK"
                 width={220}
                 height={65}
-                className="h-10 w-auto sm:h-12"
+                className="h-20 w-auto sm:h-24"
               />
             </Link>
             <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
