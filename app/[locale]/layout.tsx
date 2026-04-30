@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
@@ -35,7 +36,10 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Načti zprávy přímo – bez createNextIntlPlugin a getMessages()
+  // Nastav locale pro server komponenty (next-intl plugin)
+  setRequestLocale(locale);
+
+  // Načti zprávy
   const loader = messageLoaders[locale as keyof typeof messageLoaders] ?? messageLoaders.cs;
   const messages = (await loader()).default;
 
