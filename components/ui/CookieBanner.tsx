@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale } from "@/lib/i18n-client";
 
 interface CookieConsent {
   necessary: boolean;     // vždy true, nelze vypnout

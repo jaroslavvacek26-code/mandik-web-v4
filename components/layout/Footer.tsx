@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations, useLocale } from "@/lib/i18n-client";
 
 interface NavCategory {
   name: string;

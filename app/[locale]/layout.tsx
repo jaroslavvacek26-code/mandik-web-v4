@@ -1,11 +1,11 @@
 export const dynamic = "force-dynamic";
 
-import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
+import { I18nProvider } from "@/lib/i18n-client";
 import { routing } from "@/routing";
 import { fetchPortfolio } from "@/lib/api";
 
@@ -43,13 +43,13 @@ export default async function LocaleLayout({
   const navCategories = categories.map((c) => ({ name: c.name, slug: c.slug }));
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
+    <I18nProvider locale={locale} messages={messages}>
       <Header categories={navCategories} />
       <div className="pt-16 flex-1 flex flex-col">
         {children}
       </div>
       <Footer categories={navCategories} />
       <CookieBanner />
-    </NextIntlClientProvider>
+    </I18nProvider>
   );
 }

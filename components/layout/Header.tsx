@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations, useLocale } from "@/lib/i18n-client";
 
 const locales = [
   { code: "cs", label: "CZ", flagSrc: "https://flagcdn.com/w20/cz.png" },
