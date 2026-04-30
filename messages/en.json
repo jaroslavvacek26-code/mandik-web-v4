@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "company": "Our Company",
+    "about": "About Us",
+    "references": "References",
+    "news": "News",
+    "careers": "Careers",
+    "virtualShowroom": "Virtual Showroom",
+    "products": "Products",
+    "service": "Service",
+    "downloads": "Downloads",
+    "catalog": "Catalog",
+    "software": "Software",
+    "certificates": "Certificates & Documents",
+    "contact": "Contact"
+  },
+  "hero": {
+    "motto": "Air Handling with Precision",
+    "description": "Manufacturer of air handling components, fire protection elements and industrial heating for projects worldwide.",
+    "ctaProducts": "Browse Products",
+    "ctaCompany": "Our Company"
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Comprehensive range of air handling components",
+    "virtualShowroom": "Virtual Showroom",
+    "viewAll": "View all products"
+  },
+  "news": {
+    "title": "News",
+    "readMore": "Read more"
+  },
+  "certifications": {
+    "title": "Certifications & Memberships"
+  },
+  "footer": {
+    "company": "MANDÍK a.s.",
+    "address": "Dobříšská 550, 267 24 Hostomice, Czech Republic",
+    "description": "MANDÍK, a.s. is a company with over thirty years of tradition. We supply technologically advanced products to demanding customers around the world. Development and production take place under one roof in the Czech Republic, allowing us to respond flexibly to specific requirements. We build on quality, precision and reliability, and we are a partner you can rely on from design to long-term service.",
+    "support": "Support",
+    "contactSupport": "Contact Support",
+    "manuals": "Manuals",
+    "aktuality": "News",
+    "jobOffers": "Job Offers",
+    "euSupport": "EU Support",
+    "legal": "Legal",
+    "copyright": "© {year} MANDÍK, a.s., All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookies",
+    "whistleblowing": "Whistleblowing"
+  },
+  "contact": {
+    "title": "Contact",
+    "headquarters": "Headquarters",
+    "phone": "Phone",
+    "email": "Email",
+    "sendMessage": "Send Message"
+  }
+}

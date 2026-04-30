@@ -2,16 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Eurostile font – fallback na Arial pokud není k dispozici */
+@font-face {
+  font-family: "Eurostile";
+  src: local("Eurostile"), local("EurostileExtended");
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --brand-blue: #506077;
+  --brand-green: #26d07c;
+  --brand-light-blue: #74d1ea;
+  --brand-orange: #f2a900;
+  --brand-yellow: #ffd700;
 }
 
 body {
@@ -23,5 +29,8 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .font-eurostile {
+    font-family: "Eurostile", Arial, sans-serif;
   }
 }

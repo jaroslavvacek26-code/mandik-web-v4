@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "company": "Unser Unternehmen",
+    "about": "Über uns",
+    "references": "Referenzen",
+    "news": "Neuigkeiten",
+    "careers": "Karriere",
+    "virtualShowroom": "Virtueller Showroom",
+    "products": "Produkte",
+    "service": "Service",
+    "downloads": "Downloads",
+    "catalog": "Katalog",
+    "software": "Software",
+    "certificates": "Zertifikate & Dokumente",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "motto": "Lüftungstechnik mit Präzision",
+    "description": "Hersteller von lüftungstechnischen Komponenten, Brandschutzeinrichtungen und Industrieheizungen für Projekte weltweit.",
+    "ctaProducts": "Produkte ansehen",
+    "ctaCompany": "Unser Unternehmen"
+  },
+  "products": {
+    "title": "Produkte",
+    "subtitle": "Umfangreiches Sortiment an lüftungstechnischen Komponenten",
+    "virtualShowroom": "Virtueller Showroom",
+    "viewAll": "Alle Produkte anzeigen"
+  },
+  "news": {
+    "title": "Neuigkeiten",
+    "readMore": "Mehr lesen"
+  },
+  "certifications": {
+    "title": "Zertifizierungen & Mitgliedschaften"
+  },
+  "footer": {
+    "company": "Mandik GmbH",
+    "address": "Dobříšská 550, 267 24 Hostomice, Tschechien",
+    "description": "MANDÍK, a.s. ist ein Unternehmen mit über dreißigjähriger Tradition. Wir liefern technologisch fortschrittliche Produkte an anspruchsvolle Kunden weltweit. Entwicklung und Produktion finden unter einem Dach in der Tschechischen Republik statt, was es uns ermöglicht, flexibel auf spezifische Anforderungen zu reagieren. Wir setzen auf Qualität, Präzision und Zuverlässigkeit und sind ein Partner, auf den Sie sich vom Entwurf bis zum langfristigen Service verlassen können.",
+    "support": "Support",
+    "contactSupport": "Support kontaktieren",
+    "manuals": "Handbücher",
+    "aktuality": "Aktuelles",
+    "jobOffers": "Stellenangebote",
+    "euSupport": "EU-Förderung",
+    "legal": "Rechtliches",
+    "copyright": "© {year} MANDÍK, a.s., Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies",
+    "whistleblowing": "Whistleblowing"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "headquarters": "Hauptsitz",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "sendMessage": "Nachricht senden"
+  }
+}

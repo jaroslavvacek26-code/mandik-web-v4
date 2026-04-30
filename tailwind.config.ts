@@ -9,8 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        brand: {
+          blue: "#506077",       // Primární ocelová modrá
+          green: "#26d07c",      // Akcent zelená
+          "light-blue": "#74d1ea",
+          orange: "#f2a900",
+          yellow: "#ffd700",
+        },
+        background: "#ffffff",
+        foreground: "#1a1a1a",
+      },
+      fontFamily: {
+        sans: ["Arial", "Helvetica", "sans-serif"],
+        eurostile: ["Eurostile", "Arial", "sans-serif"],
       },
     },
   },

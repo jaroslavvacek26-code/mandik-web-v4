@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "company": "Naše společnost",
+    "about": "O nás",
+    "references": "Reference",
+    "news": "Novinky",
+    "careers": "Volná pracovní místa",
+    "virtualShowroom": "Virtuální showroom",
+    "products": "Výrobky",
+    "service": "Servis",
+    "downloads": "Ke stažení",
+    "catalog": "Katalog",
+    "software": "Programy",
+    "certificates": "Certifikace a dokumenty",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "motto": "Vzduchotechnika s přesností",
+    "description": "Výrobce vzduchotechnických komponentů, protipožárních prvků a průmyslového vytápění pro projekty po celém světě.",
+    "ctaProducts": "Prohlédnout výrobky",
+    "ctaCompany": "Naše společnost"
+  },
+  "products": {
+    "title": "Výrobky",
+    "subtitle": "Komplexní sortiment vzduchotechnických komponentů",
+    "virtualShowroom": "Virtuální showroom",
+    "viewAll": "Zobrazit všechny výrobky"
+  },
+  "news": {
+    "title": "Novinky",
+    "readMore": "Číst více"
+  },
+  "certifications": {
+    "title": "Certifikace a členství"
+  },
+  "footer": {
+    "company": "MANDÍK a.s.",
+    "address": "Dobříšská 550, 267 24 Hostomice",
+    "description": "MANDÍK, a.s. je společnost s více než třicetiletou tradicí. Dodáváme technologicky vyspělé výrobky pro náročné zákazníky po celém světě. Vývoj a výroba probíhají pod jednou střechou v České republice, což nám umožňuje pružně reagovat na specifické požadavky. Stavíme na kvalitě, přesnosti a spolehlivosti a jsme partnerem, na kterého se můžete spolehnout od návrhu až po dlouhodobý servis.",
+    "support": "Podpora",
+    "contactSupport": "Kontaktovat podporu",
+    "manuals": "Manuály",
+    "aktuality": "Aktuality",
+    "jobOffers": "Pracovní nabídky",
+    "euSupport": "Za podpory Evropské Unie",
+    "legal": "Právní",
+    "copyright": "© {year} MANDÍK, a.s., Všechna práva vyhrazena.",
+    "privacy": "Ochrana osobních údajů",
+    "cookies": "Cookies",
+    "whistleblowing": "Whistleblowing"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "headquarters": "Sídlo společnosti",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "sendMessage": "Poslat zprávu"
+  }
+}
