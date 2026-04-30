@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from "@/lib/i18n-client";
 
@@ -22,9 +23,13 @@ export default function Footer({ categories = [] }: { categories?: NavCategory[]
           {/* Logo + popis firmy */}
           <div>
             <Link href={`/${locale}`} className="inline-block">
-              <span className="font-eurostile text-3xl font-bold tracking-widest text-[#74d1ea]">
-                MANDÍK
-              </span>
+              <Image
+                src="/logos/mandik-logo-white.webp"
+                alt="MANDÍK"
+                width={220}
+                height={65}
+                className="h-10 w-auto sm:h-12"
+              />
             </Link>
             <p className="mt-4 text-sm text-white/80 leading-relaxed max-w-sm">
               {t("description")}

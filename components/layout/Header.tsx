@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "@/lib/i18n-client";
@@ -132,9 +133,14 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center shrink-0" onClick={closeAll}>
-          <span className="font-eurostile text-xl font-bold text-brand-blue tracking-widest uppercase">
-            MANDÍK
-          </span>
+          <Image
+            src="/logos/mandik-logo-gray.webp"
+            alt="MANDÍK"
+            width={180}
+            height={54}
+            className="h-8 w-auto sm:h-9"
+            priority
+          />
         </Link>
 
         {/* Desktop navigace */}
