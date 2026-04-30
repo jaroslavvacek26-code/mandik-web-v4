@@ -1,9 +1,6 @@
 import { getRequestConfig } from "next-intl/server";
-import { notFound } from "next/navigation";
 import { routing } from "./routing";
 
-// Explicitní mapa importů – webpack je umí staticky analyzovat,
-// template literal import by mohl způsobit __dirname error na Vercelu
 const messageLoaders = {
   cs: () => import("./messages/cs.json"),
   en: () => import("./messages/en.json"),
@@ -12,12 +9,11 @@ const messageLoaders = {
 } as const;
 
 export default getRequestConfig(async ({ locale }) => {
-  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
-    notFound();
-  }
+  const validLocale = routing.locales.includes(locale as (typeof routing.locales)[number])
+    ? (locale as keyof typeof messageLoaders)
+    : "cs";
 
-  const loader = messageLoaders[locale as keyof typeof messageLoaders] ?? messageLoaders.cs;
-  const messages = (await loader()).default;
+  const messages = (await messageLoaders[validLocale]()).default;
 
-  return { messages };
+  return { locale: validLocale, messages };
 });

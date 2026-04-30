@@ -1,7 +1,3 @@
-const createNextIntlPlugin = require("next-intl/plugin");
-
-const withNextIntl = createNextIntlPlugin("./i18n.ts");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -13,14 +9,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Přesměrování z kořene na českou verzi
-      {
-        source: "/",
-        destination: "/cs",
-        permanent: false,
-      },
+      { source: "/", destination: "/cs", permanent: false },
     ];
   },
 };
 
-module.exports = withNextIntl(nextConfig);
+export default nextConfig;

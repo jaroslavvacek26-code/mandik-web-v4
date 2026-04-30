@@ -1,7 +1,6 @@
 export const dynamic = "force-dynamic";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
@@ -9,6 +8,14 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 import { routing } from "@/routing";
 import { fetchPortfolio } from "@/lib/api";
+
+// Explicitní mapa – žádné template literals, žádný __dirname
+const messageLoaders = {
+  cs: () => import("@/messages/cs.json"),
+  en: () => import("@/messages/en.json"),
+  de: () => import("@/messages/de.json"),
+  uk: () => import("@/messages/uk.json"),
+} as const;
 
 export const metadata: Metadata = {
   title: "MANDÍK a.s. – Vzduchotechnika, protipožární prvky, průmyslové vytápění",
@@ -28,17 +35,15 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  // Nastav locale pro všechny server komponenty bez next-intl middleware
-  setRequestLocale(locale);
+  // Načti zprávy přímo – bez createNextIntlPlugin a getMessages()
+  const loader = messageLoaders[locale as keyof typeof messageLoaders] ?? messageLoaders.cs;
+  const messages = (await loader()).default;
 
-  const messages = await getMessages({ locale });
-
-  // Kategorie pro dropdown "Výrobky" v headeru
   const categories = await fetchPortfolio(locale).catch(() => []);
   const navCategories = categories.map((c) => ({ name: c.name, slug: c.slug }));
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider locale={locale} messages={messages}>
       <Header categories={navCategories} />
       <div className="pt-16 flex-1 flex flex-col">
         {children}
@@ -47,8 +52,4 @@ export default async function LocaleLayout({
       <CookieBanner />
     </NextIntlClientProvider>
   );
-}
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
 }
