@@ -11,11 +11,6 @@ const nextConfig = {
       { protocol: "https", hostname: "wi1rvkmguv1ndwwa.public.blob.vercel-storage.com" },
     ],
   },
-  async redirects() {
-    return [
-      { source: "/", destination: "/cs", permanent: false },
-    ];
-  },
 };
 
 export default withNextIntl(nextConfig);
