@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
 import { fetchCertificates, fetchDocuments, fetchEpd } from "@/lib/api";
 import type { Resource } from "@/lib/types";
 
@@ -78,8 +77,12 @@ function CertBadge({ item }: { item: Resource }) {
   );
 }
 
-export default async function CertifikatyPage() {
-  const locale = await getLocale();
+export default async function CertifikatyPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
 
   const [certificates, documents, epd] = await Promise.all([
     fetchCertificates(locale),

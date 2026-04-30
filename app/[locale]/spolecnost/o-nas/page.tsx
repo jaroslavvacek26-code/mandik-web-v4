@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
 import { MILESTONES } from "@/lib/milestones";
 
-export default async function ONasPage() {
-  const locale = await getLocale();
+export default function ONasPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
 
   // Milníky seřazené od nejnovějšího
   const sorted = [...MILESTONES].sort((a, b) => b.year - a.year);

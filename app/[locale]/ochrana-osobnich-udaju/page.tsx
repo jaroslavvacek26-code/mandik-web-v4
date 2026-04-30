@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
 
-export default async function GDPRPage() {
-  const locale = await getLocale();
+export default function GDPRPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
 
   return (
     <main className="py-20 px-4 sm:px-6 lg:px-8">

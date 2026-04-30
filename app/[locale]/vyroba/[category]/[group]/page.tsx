@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getLocale } from "next-intl/server";
 import { fetchPortfolio } from "@/lib/api";
 import type { Download, ProductGroup } from "@/lib/types";
 import { charText } from "@/lib/types";
@@ -12,10 +11,10 @@ export default async function GroupDetailPage({
 }: {
   params: { locale: string; category: string; group: string };
 }) {
-  const locale = await getLocale();
+  const { locale, category, group: groupSlug } = params;
   const categories = await fetchPortfolio(locale);
 
-  const cat = categories.find((c) => c.slug === params.category);
+  const cat = categories.find((c) => c.slug === category);
   if (!cat) notFound();
 
   // Najdi group přímo nebo přes subcategories
@@ -23,10 +22,10 @@ export default async function GroupDetailPage({
   let subcategoryName: string | undefined;
 
   if (cat.groups?.length > 0) {
-    group = cat.groups.find((g) => g.slug === params.group);
+    group = cat.groups.find((g) => g.slug === groupSlug);
   } else {
     for (const sub of cat.subcategories ?? []) {
-      const found = sub.groups.find((g) => g.slug === params.group);
+      const found = sub.groups.find((g) => g.slug === groupSlug);
       if (found) {
         group = found;
         subcategoryName = sub.name;

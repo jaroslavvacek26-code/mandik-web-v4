@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { fetchDownloads } from "@/lib/api";
 import type { Resource } from "@/lib/types";
 
@@ -70,9 +70,13 @@ function DownloadCard({ item }: { item: Resource }) {
   );
 }
 
-export default async function KeStazeniPage() {
-  const locale = await getLocale();
-  const t = await getTranslations("nav");
+export default async function KeStazeniPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
+  const t = await getT(locale, "nav");
   const downloads = await fetchDownloads(locale);
 
   // Seskupit dle type_name

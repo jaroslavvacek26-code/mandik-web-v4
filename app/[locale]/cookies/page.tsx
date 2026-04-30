@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
 import OpenCookieSettings from "@/components/ui/OpenCookieSettings";
 
-export default async function CookiesPage() {
-  const locale = await getLocale();
+export default function CookiesPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
 
   return (
     <main className="py-20 px-4 sm:px-6 lg:px-8">

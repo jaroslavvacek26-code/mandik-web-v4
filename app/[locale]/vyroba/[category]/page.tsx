@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getLocale } from "next-intl/server";
 import { fetchPortfolio } from "@/lib/api";
 import type { ProductGroup } from "@/lib/types";
 
@@ -10,9 +9,9 @@ export default async function CategoryPage({
 }: {
   params: { locale: string; category: string };
 }) {
-  const locale = await getLocale();
+  const { locale, category } = params;
   const categories = await fetchPortfolio(locale);
-  const cat = categories.find((c) => c.slug === params.category);
+  const cat = categories.find((c) => c.slug === category);
   if (!cat) notFound();
 
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { fetchPortfolio } from "@/lib/api";
 import type { Category } from "@/lib/types";
 
@@ -52,9 +52,8 @@ function ProductCard({ category, locale }: { category: Category; locale: string 
   );
 }
 
-export default async function Products() {
-  const locale = await getLocale();
-  const t = await getTranslations("products");
+export default async function Products({ locale }: { locale: string }) {
+  const t = await getT(locale, "products");
   const categories = await fetchPortfolio(locale);
   const displayed = categories.slice(0, 8);
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { fetchCertifications } from "@/lib/api";
 
 // Statická loga jako fallback (soubory v /public/logos/)
@@ -20,9 +20,8 @@ const STATIC_CERTS = [
   { id: 14, name: "DIvB", logo_url: "/logos/logoDIvB.png", url: "https://www.divb.cz/" },
 ];
 
-export default async function Certifications() {
-  const locale = await getLocale();
-  const t = await getTranslations("certifications");
+export default async function Certifications({ locale }: { locale: string }) {
+  const t = await getT(locale, "certifications");
   const apiCerts = await fetchCertifications(locale);
   const certs = apiCerts.length > 0 ? apiCerts : STATIC_CERTS;
 

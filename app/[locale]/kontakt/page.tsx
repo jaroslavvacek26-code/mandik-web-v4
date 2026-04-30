@@ -1,9 +1,13 @@
-import { getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { getPeopleByLocation } from "@/lib/contacts";
 import ContactSection from "@/components/ui/ContactSection";
 
-export default async function KontaktPage() {
-  const t = await getTranslations("contact");
+export default async function KontaktPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getT(params.locale, "contact");
   const groups = getPeopleByLocation();
 
   return (

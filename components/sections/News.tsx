@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { fetchNews } from "@/lib/api";
 
 function formatDate(dateStr?: string) {
@@ -19,9 +19,8 @@ const FALLBACK_NEWS = [
   { id: 3, title: "ISO 9001 recertifikace", perex: "MANDÍK a.s. úspěšně prošel recertifikačním auditem systému managementu kvality.", published_at: "2024-06-20", slug: "iso-9001-recertifikace", image: undefined },
 ];
 
-export default async function News() {
-  const locale = await getLocale();
-  const t = await getTranslations("news");
+export default async function News({ locale }: { locale: string }) {
+  const t = await getT(locale, "news");
   const items = await fetchNews(locale);
   const news = items.length > 0 ? items.slice(0, 3) : FALLBACK_NEWS;
 

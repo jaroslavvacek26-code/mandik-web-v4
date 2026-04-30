@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 
 const SERVICES = [
   {
@@ -23,8 +23,12 @@ const SERVICES = [
   },
 ];
 
-export default async function ServisPage() {
-  const t = await getTranslations("nav");
+export default async function ServisPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const t = await getT(params.locale, "nav");
 
   return (
     <main className="py-20 px-4 sm:px-6 lg:px-8">

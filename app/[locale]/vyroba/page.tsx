@@ -1,11 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getT } from "@/lib/i18n-server";
 import { fetchPortfolio } from "@/lib/api";
 
-export default async function VyrobaPage() {
-  const locale = await getLocale();
-  const t = await getTranslations("products");
+export default async function VyrobaPage({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  const { locale } = params;
+  const t = await getT(locale, "products");
   const categories = await fetchPortfolio(locale);
 
   return (
