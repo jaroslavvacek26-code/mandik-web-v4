@@ -60,7 +60,7 @@ export default async function ServisPage({
           <p className="text-white/80 mb-6">Kontaktujte náš servisní tým — reagujeme do 24 hodin.</p>
           <a
             href="mailto:servis@mandik.cz"
-            className="inline-block px-8 py-3 bg-brand-green text-white font-semibold rounded hover:bg-green-500 transition-colors"
+            className="inline-block px-8 py-3 bg-brand-green text-white font-semibold rounded hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200"
           >
             Kontaktovat servis
           </a>

@@ -57,12 +57,61 @@ function DownloadCard({ item }: { item: Resource }) {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-auto flex items-center gap-1.5 px-4 py-2 bg-brand-green text-white text-xs font-semibold rounded hover:bg-green-500 transition-colors"
+            className="ml-auto flex items-center gap-1.5 px-4 py-2 bg-brand-green text-white text-xs font-semibold rounded hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             Stáhnout
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ManselCard() {
+  return (
+    <div className="bg-white border border-gray-100 rounded overflow-hidden hover:shadow-md transition-shadow flex flex-col">
+      {/* Obrázek */}
+      <div className="relative h-36 bg-gray-50">
+        <Image
+          src="https://mandik.info/api/v1/downloads/gallery/460aac85-a56e-4d96-b221-0c9c897c0466"
+          alt="MANSEL"
+          fill
+          className="object-contain p-3"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+
+      <div className="p-5 flex flex-col flex-1">
+        <div className="flex items-start gap-2 mb-2">
+          <span className="shrink-0 mt-0.5 text-xs font-bold px-1.5 py-0.5 bg-brand-green/10 text-brand-green rounded">WEB</span>
+          <h3 className="font-eurostile font-bold text-brand-blue text-sm leading-tight">MANSEL</h3>
+        </div>
+
+        <p className="text-xs text-brand-green font-medium mb-2">
+          Online nástroj pro výběr a výpočty vzduchotechnických komponent MANDÍK
+        </p>
+
+        <ul className="text-xs text-gray-600 leading-relaxed flex-1 space-y-1">
+          <li>✔️ Rychlý přístup z jakéhokoliv zařízení (PC, tablet, klidně i mobil)</li>
+          <li>✔️ Bez starostí s aktualizacemi – vše je vždy aktuální</li>
+          <li>✔️ Jednoduché sdílení výsledků a projektů</li>
+          <li>✔️ Stabilní a intuitivní prostředí</li>
+        </ul>
+
+        <div className="mt-4 flex items-center justify-end">
+          <a
+            href="https://mansel.online/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-4 py-2 bg-brand-green text-white text-xs font-semibold rounded hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            Přejít na MANSEL.ONLINE
           </a>
         </div>
       </div>
@@ -110,6 +159,7 @@ export default async function KeStazeniPage({
                   {items.length} {items.length === 1 ? "soubor" : items.length < 5 ? "soubory" : "souborů"}
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ml-4">
+                  {typeName === "Aplikace" && <ManselCard />}
                   {items.map((item, i) => (
                     <DownloadCard key={i} item={item} />
                   ))}

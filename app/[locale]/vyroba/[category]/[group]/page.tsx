@@ -49,7 +49,7 @@ export default async function GroupDetailPage({
 
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-8 flex flex-wrap gap-2 items-center">
-          <Link href={`/${locale}/vyroba`} className="hover:text-brand-green transition-colors">Výrobky</Link>
+          <Link href={`/${locale}`} className="hover:text-brand-green transition-colors">Domů</Link>
           <span>/</span>
           <Link href={`/${locale}/vyroba/${cat.slug}`} className="hover:text-brand-green transition-colors">{cat.name}</Link>
           {subcategoryName && (

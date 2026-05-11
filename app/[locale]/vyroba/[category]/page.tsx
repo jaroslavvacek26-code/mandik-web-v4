@@ -19,7 +19,7 @@ export default async function CategoryPage({
       <div className="max-w-7xl mx-auto">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-8 flex gap-2 items-center">
-          <Link href={`/${locale}/vyroba`} className="hover:text-brand-green transition-colors">Výrobky</Link>
+          <Link href={`/${locale}`} className="hover:text-brand-green transition-colors">Domů</Link>
           <span>/</span>
           <span className="text-brand-blue font-medium">{cat.name}</span>
         </nav>

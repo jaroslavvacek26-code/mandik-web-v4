@@ -34,12 +34,12 @@ export default function Hero() {
 
         {/* CTA tlačítka */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <Link
-            href={`/${locale}/vyroba`}
-            className="px-8 py-3 bg-brand-green text-white font-semibold rounded hover:bg-green-500 transition-colors"
+          <button
+            onClick={() => document.getElementById("vyroba")?.scrollIntoView({ behavior: "smooth" })}
+            className="px-8 py-3 bg-brand-green text-white font-semibold rounded transition-all duration-200 hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)]"
           >
             {t("ctaProducts")}
-          </Link>
+          </button>
           <Link
             href={`/${locale}/spolecnost/o-nas`}
             className="px-8 py-3 border-2 border-white text-white font-semibold rounded hover:bg-white hover:text-brand-blue transition-colors"
@@ -50,11 +50,15 @@ export default function Hero() {
       </div>
 
       {/* Scroll indikátor */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+      <button
+        onClick={() => document.getElementById("vyroba")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce cursor-pointer hover:text-white transition-colors"
+        aria-label="Přejít na výrobky"
+      >
         <svg className="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
-      </div>
+      </button>
     </section>
   );
 }

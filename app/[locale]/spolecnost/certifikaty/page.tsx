@@ -122,7 +122,7 @@ export default async function CertifikatyPage({
             href="https://www.ekoznacka.cz/databaze-epd-v-cr/"
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-brand-green/90 transition-colors text-sm"
+            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-brand-green text-white font-semibold rounded-lg hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200 text-sm"
           >
             EPD Databáze
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

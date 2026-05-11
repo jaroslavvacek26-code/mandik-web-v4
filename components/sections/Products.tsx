@@ -10,12 +10,12 @@ function ShowroomCard({ label }: { label: string }) {
       href="https://my.matterport.com/show/?m=MW8NFZmbZoo"
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative aspect-square overflow-hidden rounded bg-brand-blue flex flex-col items-center justify-center text-white hover:bg-brand-blue/90 transition-colors"
+      className="group relative aspect-square overflow-hidden rounded bg-brand-blue flex flex-col items-center justify-center text-white hover:bg-brand-blue/90 ring-0 ring-brand-green hover:ring-2 transition-all duration-200"
     >
-      <svg className="w-12 h-12 mb-3 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-12 h-12 mb-3 text-brand-green group-hover:scale-125 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M3 8a1 1 0 011-1h8a1 1 0 011 1v8a1 1 0 01-1 1H4a1 1 0 01-1-1V8z" />
       </svg>
-      <span className="font-eurostile font-semibold text-xl text-center px-4 leading-tight">{label}</span>
+      <span className="font-eurostile font-semibold text-xl text-center px-4 leading-tight group-hover:scale-110 transition-transform duration-200">{label}</span>
     </a>
   );
 }
@@ -26,7 +26,7 @@ function ProductCard({ category, locale }: { category: Category; locale: string 
   return (
     <Link
       href={`/${locale}/vyroba/${category.slug}`}
-      className="group relative aspect-square overflow-hidden rounded bg-gray-100"
+      className="group relative aspect-square overflow-hidden rounded bg-gray-100 ring-0 ring-brand-green hover:ring-2 transition-all duration-200"
     >
       {image ? (
         <>
@@ -58,7 +58,7 @@ export default async function Products({ locale }: { locale: string }) {
   const displayed = categories.slice(0, 8);
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="vyroba" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
           <h2 className="font-eurostile text-3xl sm:text-4xl font-bold text-brand-blue">

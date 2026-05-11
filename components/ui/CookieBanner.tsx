@@ -157,7 +157,7 @@ export default function CookieBanner() {
                 </button>
                 <button
                   onClick={acceptAll}
-                  className="flex-1 px-4 py-2.5 rounded-lg bg-brand-green text-white text-sm font-semibold hover:bg-brand-green/90 transition-colors"
+                  className="flex-1 px-4 py-2.5 rounded-lg bg-brand-green text-white text-sm font-semibold hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200"
                 >
                   Přijmout vše
                 </button>
@@ -202,7 +202,7 @@ export default function CookieBanner() {
               </button>
               <button
                 onClick={acceptAll}
-                className="px-5 py-2 rounded-lg bg-brand-green text-white text-sm font-semibold hover:bg-brand-green/90 transition-colors"
+                className="px-5 py-2 rounded-lg bg-brand-green text-white text-sm font-semibold hover:bg-green-400 hover:shadow-[0_0_20px_rgba(38,208,124,0.5)] transition-all duration-200"
               >
                 Přijmout vše
               </button>
