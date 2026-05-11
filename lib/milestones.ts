@@ -13,6 +13,16 @@ export interface Milestone {
 
 export const MILESTONES: Milestone[] = [
   {
+    year: 2025,
+    title: "Nová výrobní hala",
+    description: "Společnost dokončila výstavbu nové moderní výrobní haly, která rozšířila naše kapacity a umožnila další rozvoj.",
+  },
+  {
+    year: 2024,
+    title: "Dynamický růst",
+    description: "Firma úspěšně navýšila obrat a pokračovala v dynamickém růstu napříč všemi oblastmi svého působení.",
+  },
+  {
     year: 2023,
     title: "Miliardový obrat",
     description: "Poprvé v historii společnosti překročen roční obrat 1 mld Kč.",
