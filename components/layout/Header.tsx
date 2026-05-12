@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "@/lib/i18n-client";
+import { SOCIAL_LINKS } from "@/lib/social";
 
 const locales = [
   { code: "cs", label: "CZ", flagSrc: "https://flagcdn.com/w20/cz.png" },
@@ -215,8 +216,24 @@ export default function Header({ categories = [] }: { categories?: NavCategory[]
           </li>
         </ul>
 
-        {/* Přepínač jazyků (desktop) */}
-        <div className="hidden md:block">
+        {/* Sociální sítě + přepínač jazyků (desktop) */}
+        <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-0.5">
+            {SOCIAL_LINKS.map(({ label, href, path }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="p-1.5 text-gray-400 hover:text-brand-green transition-colors"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d={path} />
+                </svg>
+              </a>
+            ))}
+          </div>
           <LangSwitcher />
         </div>
 
