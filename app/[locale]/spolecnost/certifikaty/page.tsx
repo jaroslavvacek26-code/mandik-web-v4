@@ -3,6 +3,25 @@ import Link from "next/link";
 import { fetchCertificates, fetchDocuments, fetchEpd } from "@/lib/api";
 import type { Resource } from "@/lib/types";
 
+// Opravy odkazů – přebijí případně špatné URL z API
+const LINK_OVERRIDES: Array<{ match: string; url: string }> = [
+  { match: "INDESEN", url: "https://www.indesen.cz/" },
+  { match: "RLT",     url: "https://rlt-geraete.de/" },
+  { match: "CCPI",    url: "https://www.cpicode.org.uk/" },
+  { match: "CCPi",    url: "https://www.cpicode.org.uk/" },
+  { match: "DIvB",    url: "https://divb.org/" },
+  { match: "DIVB",    url: "https://divb.org/" },
+];
+
+function applyOverrides(items: Resource[]): Resource[] {
+  return items.map((item) => {
+    const override = LINK_OVERRIDES.find((o) =>
+      item.title.toUpperCase().includes(o.match.toUpperCase())
+    );
+    return override ? { ...item, link: override.url } : item;
+  });
+}
+
 function ResourceCard({ item }: { item: Resource }) {
   return (
     <a
@@ -84,11 +103,12 @@ export default async function CertifikatyPage({
 }) {
   const { locale } = params;
 
-  const [certificates, documents, epd] = await Promise.all([
+  const [rawCertificates, documents, epd] = await Promise.all([
     fetchCertificates(locale),
     fetchDocuments(locale),
     fetchEpd(locale),
   ]);
+  const certificates = applyOverrides(rawCertificates);
 
   return (
     <main className="py-20 px-4 sm:px-6 lg:px-8">

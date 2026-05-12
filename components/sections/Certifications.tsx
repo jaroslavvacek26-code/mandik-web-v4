@@ -4,26 +4,47 @@ import { fetchCertifications } from "@/lib/api";
 
 // Statická loga jako fallback (soubory v /public/logos/)
 const STATIC_CERTS = [
-  { id: 1, name: "EUROVENT", logo_url: "/logos/logoEUROVENT.png", url: "https://www.eurovent-certification.com/" },
-  { id: 2, name: "TÜV", logo_url: "/logos/logoTUV.jpg", url: "https://www.tuv.com/" },
-  { id: 3, name: "PAVUS", logo_url: "/logos/logoPAVUS.png", url: "https://www.pavus.cz/" },
-  { id: 4, name: "VÚPS", logo_url: "/logos/logoVUPS.png", url: "https://www.vups.cz/" },
-  { id: 5, name: "FTZÚ", logo_url: "/logos/logoFTZU.jpg", url: "https://www.ftzu.cz/" },
-  { id: 6, name: "Efectis", logo_url: "/logos/logoEfectis.jpg", url: "https://efectis.com/" },
-  { id: 7, name: "EPD", logo_url: "/logos/logoEPD.png", url: "https://www.epd-norge.no/" },
-  { id: 8, name: "INDESEN", logo_url: "/logos/logoINDESEN.png", url: "https://www.indesen.cz/" },
-  { id: 9, name: "MagiCAD", logo_url: "/logos/logoMagiCAD.jpg", url: "https://www.magicad.com/" },
-  { id: 10, name: "MagiCloud", logo_url: "/logos/logoMagiCloud.jpg", url: "https://www.magicloud.com/" },
-  { id: 11, name: "RLT", logo_url: "/logos/logoRLT.jpg", url: "https://www.rlt-produkte.de/" },
-  { id: 12, name: "CCPI FD", logo_url: "/logos/logoCCPI_FD.png", url: "https://www.ccpi.eu/" },
-  { id: 13, name: "CCPI SCD", logo_url: "/logos/logoCCPI_SCD.png", url: "https://www.ccpi.eu/" },
-  { id: 14, name: "DIvB", logo_url: "/logos/logoDIvB.png", url: "https://www.divb.cz/" },
+  { id: 1,  name: "EUROVENT",  logo_url: "/logos/logoEUROVENT.png",  url: "https://www.eurovent-certification.com/" },
+  { id: 2,  name: "TÜV",       logo_url: "/logos/logoTUV.jpg",        url: "https://www.tuv.com/" },
+  { id: 3,  name: "PAVUS",     logo_url: "/logos/logoPAVUS.png",      url: "https://www.pavus.cz/" },
+  { id: 4,  name: "VÚPS",      logo_url: "/logos/logoVUPS.png",       url: "https://www.vups.cz/" },
+  { id: 5,  name: "FTZÚ",      logo_url: "/logos/logoFTZU.jpg",       url: "https://www.ftzu.cz/" },
+  { id: 6,  name: "Efectis",   logo_url: "/logos/logoEfectis.jpg",    url: "https://efectis.com/" },
+  { id: 7,  name: "EPD",       logo_url: "/logos/logoEPD.png",        url: "https://www.epd-norge.no/" },
+  { id: 8,  name: "INDESEN",   logo_url: "/logos/logoINDESEN.png",    url: "https://www.indesen.cz/" },
+  { id: 9,  name: "MagiCAD",   logo_url: "/logos/logoMagiCAD.jpg",    url: "https://www.magicad.com/" },
+  { id: 10, name: "MagiCloud", logo_url: "/logos/logoMagiCloud.jpg",  url: "https://www.magicloud.com/" },
+  { id: 11, name: "RLT",       logo_url: "/logos/logoRLT.jpg",        url: "https://rlt-geraete.de/" },
+  { id: 12, name: "CCPI FD",   logo_url: "/logos/logoCCPI_FD.png",    url: "https://www.cpicode.org.uk/" },
+  { id: 13, name: "CCPI SCD",  logo_url: "/logos/logoCCPI_SCD.png",   url: "https://www.cpicode.org.uk/" },
+  { id: 14, name: "DIvB",      logo_url: "/logos/logoDIvB.png",       url: "https://divb.org/" },
 ];
+
+// Opravy odkazů – přebijí případně špatné URL z API (klíč = substring názvu, case-insensitive)
+const LINK_OVERRIDES: Array<{ match: string; url: string }> = [
+  { match: "INDESEN",  url: "https://www.indesen.cz/" },
+  { match: "RLT",      url: "https://rlt-geraete.de/" },
+  { match: "CCPI",     url: "https://www.cpicode.org.uk/" },
+  { match: "CCPi",     url: "https://www.cpicode.org.uk/" },
+  { match: "DIvB",     url: "https://divb.org/" },
+  { match: "DIVB",     url: "https://divb.org/" },
+];
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function applyOverrides<T extends { name: string; url?: string | null }>(certs: T[]): T[] {
+  return certs.map((cert) => {
+    const override = LINK_OVERRIDES.find((o) =>
+      cert.name.toUpperCase().includes(o.match.toUpperCase())
+    );
+    return override ? { ...cert, url: override.url } : cert;
+  });
+}
 
 export default async function Certifications({ locale }: { locale: string }) {
   const t = await getT(locale, "certifications");
   const apiCerts = await fetchCertifications(locale);
-  const certs = apiCerts.length > 0 ? apiCerts : STATIC_CERTS;
+  const raw = apiCerts.length > 0 ? apiCerts : STATIC_CERTS;
+  const certs = applyOverrides(raw);
 
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
